@@ -54,6 +54,17 @@ def banhammer():
   r="╔═════╗╔════╗╔═╗╔═╗\n ║ ╔═══╝║ ╔╗ ║║ ║║ ║\n ║ ╚═══╗║ ╚╝ ║║ ╚╝ ║\n ║ ╔═╗ ║║ ╔╗ ║║ ╔╗ ║\n ║ ╚═╝ ║║ ║║ ║║ ║║ ║\n ╚═════╝╚═╝╚═╝╚═╝╚═╝"
   return r
 
+def binary(num: str, base: int):
+  result = 0
+  reversed_number = num[::-1]
+  current_degree = 0
+  for symbol in reversed_number:
+    number = int(symbol)
+    next_number = number * base ** current_degree
+    result += next_number
+    current_degree += 1
+  return result
+
 import logging
 logger=logging.getLogger(__name__)
 
@@ -93,6 +104,9 @@ for line in input_file:
       print(f'Объём шара равен: {vol}')
     elif command == 'ban':
       print(f'    Привет, тебе...\n {banhammer()}')
+    elif command == 'decimal':
+      decimal = binary(parametrs[1], int(parametrs[2]))
+      print(f'Decimal {decimal}')
     else:
       raise Exception(f'Команда {parametrs[0]} не найдена')     
   except Exception as e:
