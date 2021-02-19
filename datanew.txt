@@ -1,0 +1,12 @@
+chars ар373
+multi 8 8
+equa 6 2 -2
+circSquare 3
+div 3 8
+hypo 2 7
+vol 7
+sum 88 35 387
+fibonacci 1 8
+vol 3
+ban
+decimal 1011110 10
